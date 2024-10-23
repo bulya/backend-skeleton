@@ -43,3 +43,8 @@ jobs:
           cd build/awesome
           cp ./api/.env.example ./api/.env
           make api-test
+      - name: Ruff checks on the default project code
+        uses: pre-commit/action@v3.0.1
+        with:
+          extra_args: ruff --all-files
+
